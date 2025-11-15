@@ -11,5 +11,9 @@
 //camisa.preco = 149.99M;
 
 CarrinhoItem bola = new CarrinhoItem();
-bola.quantidade = -1;
-bola.preco = -50;
+bola.Nome = "Bola de futebol";
+bola.Quantidade = 0;
+
+//bola.Teste("Teste", 1);
+
+Console.ReadLine();
