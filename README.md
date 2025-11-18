@@ -8,8 +8,6 @@ Este repositório contém o material e o programa do curso gratuito de Programa�
 | :--- | :--- |
 | **Instrutor** | Michel Banagouro |
 | **Datas** | 17, 24 e 31 de Maio de 2023 |
-| **Horário** | 20h (Horário de Brasília) |
-| **Local** | [Canal Youtube - Cursos ASP.NET](https://www.youtube.com/@CursosASPNET) |
 
 ---
 
