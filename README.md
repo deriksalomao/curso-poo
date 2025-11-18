@@ -7,7 +7,6 @@ Este repositório contém o material e o programa do curso gratuito de Programa�
 | Detalhe | Informação |
 | :--- | :--- |
 | **Instrutor** | Michel Banagouro |
-| **Datas** | 17, 24 e 31 de Maio de 2023 |
 
 ---
 
