@@ -1,3 +1,5 @@
+using CursoPOO.Pagamento;
+
 namespace CursoPOO;
 
 public class Cesta
@@ -13,6 +15,8 @@ public class Cesta
 
     public decimal ValorTotal => _itens.Sum(x => x.Total);
 
+    public string ValorTotalFormatado => ValorTotal.ToString("C");
+
     public void AdicionarItem(Item item)
     {
         if (item == null)
@@ -27,6 +31,11 @@ public class Cesta
     {
         _itens.Remove(item);
     }
+
+    public void Pagar(IPagamento pagamento)
+    {
+        pagamento.Processar(this);
+    }   
 
     public Cesta()
     {
