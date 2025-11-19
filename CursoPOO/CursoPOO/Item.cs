@@ -1,120 +1,74 @@
-﻿using System.Security.AccessControl;
-
-namespace CursoPOO
+﻿namespace CursoPOO;
+public class Item
 {
-    public class Item
+    private const int PADRAO_QUANTIDADE = 1;
+
+    public string Nome { get; set; }
+
+    private int _quantidade;
+    public int Quantidade
     {
-        //CONSTANTES 
-        private const int PadraoQuantidade = 1;
-        //CONSTANTES
-        public string Nome { get; set; }
-
-        private int _quantidade;
-        public int Quantidade
+        get { return _quantidade; }
+        set
         {
-            get { return _quantidade; }
-            set
+            if (value > 0)
             {
-                if (value > 0)
-                {
-                    _quantidade = value;
-                }
+                _quantidade = value;
             }
         }
+    }
 
-        private decimal _preco;
-        public decimal Preco
+    private decimal _preco;
+    public decimal Preco
+    {
+        get { return _preco; }
+        set
         {
-            get { return _preco; }
-            set
+            if (value > 0)
             {
-                if (value > 0)
-                {
-                    _preco = value;
-                }
+                _preco = value;
             }
         }
+    }
 
-        public Item()
-        {
-            _quantidade = PadraoQuantidade;
-            _preco = 0m;
-        }
+    public decimal Total
+    {
+        get { return Preco * Quantidade; }
+    }
 
-        public Item(string nome, decimal preco) 
-        {
-            Nome = nome;
-            _quantidade = PadraoQuantidade;
-            _preco = preco;
-        }
+    public string TotalFormatado => Total.ToString("C");
 
+    public Item() : this("Desconhecido")
+    {
+    }
 
-        //ESTATICOS
-        public static Item CriarBola()
-        {
-            var bola = new Item();
-            bola.Nome = "Bola de Futebol";
-            bola.Quantidade = 1;
-            bola.Preco = 99M;
+    public Item(string nome) : this(nome, 0)
+    {
+    }
 
-            return bola;
-        }
-        //ESTATICOS
+    public Item(string nome, decimal preco) : this(nome, preco, PADRAO_QUANTIDADE)
+    {
+    }
+
+    public Item(string nome, decimal preco, int quantidade)
+    {
+        Nome = nome;
+        Preco = preco;
+        Quantidade = quantidade;
+    }
+
+    public override string ToString()
+    {
+        return $"Item: {Nome.PadRight(35, ' ')} | Qtd {Quantidade} | Preço Total: {TotalFormatado}";
+    }
+    public static Item CriarBola()
+    {
+        var bola = new Item();
+
+        bola.Nome = "Bola de Futebol";
+        bola.Quantidade = 1;
+        bola.Preco = 99M;
+
+        return bola;
     }
 }
-
-//--------------------------------------------------------------------------------------------------
-
-//USANDO REFERENCIA NULA//
-
-//public void Teste(string p1, int p2)
-//{
-//    /// codigo
-//}
-
-//public string Teste2()
-//{
-//    return Nome;
-//}
-
-//--------------------------------------------------------------------------------------------------
-
-//JEITO 2 DE FAZER (C#)//
-
-//private string _nome;
-//private int _quantidade;
-//private decimal _preco;
-
-//public string Nome
-//{
-//    get { return _nome; }
-//    set {
-//        if (String.IsNullOrEmpty(_nome))
-//        {
-//            throw new ArgumentException("Nome está vazio.");
-//        }
-//        _nome = value; 
-//    }
-//}
-
-//public int Quantidade { get; set; }
-
-//--------------------------------------------------------------------------------------------------
-
-//--JEITO 1 DE FAZER (JAVA)--//
-
-//public string getNome()
-//{
-//    return _nome;
-//}
-
-//public void setNome(string nome)
-//{   
-//    if (string.IsNullOrEmpty(nome))
-//    {
-//        throw new ArgumentException("Nome está vazio.");
-//    }
-//    this._nome = nome;
-//}
-
-//--------------------------------------------------------------------------------------------------

@@ -1,42 +1,30 @@
 ﻿using CursoPOO;
+using CursoPOO.Pagamento;
 
-//--------------------------------------------------------------------------------------------------
+// Criando uma instancia da classe Cesta
+Cesta minhaCesta = new Cesta();
 
-//TESTES//
+// Criando uma instancia da classe Item
+Item bola = new Item("Bola de futebol", 89.90M, 1);
+Item camiseta = new Item("Camiseta São Paulo Futebol Clube", 297.99M, 2);
+Item chuteira = new Item("Chuteira Neymar", 149.99M, 1);
 
-//CarrinhoItem bola = new CarrinhoItem();
-//bola.nome = "Bola de Futebol";
-//bola.quantidade = 1;
-//bola.preco = 99.90M;
-
-//CarrinhoItem camisa = new CarrinhoItem();
-//camisa.nome = "Camisa do Brasil";
-//camisa.quantidade = 1;
-//camisa.preco = 149.99M;
-
-//CarrinhoItem bola = new CarrinhoItem();
-
-//bola.Nome = "Bola de futebol";
-//bola.Quantidade = 0;
-//bola.Teste("Teste", 1);
-//Item bola = Item.CriarBola();
-
-//Console.WriteLine("bola");
-
-//--------------------------------------------------------------------------------------------------
-
-
-Cesta cesta = new Cesta();
-
-Item bola = new Item("Bola de futebol", 99.90M);
-cesta.Itens.Add(bola);
-
-Item camiseta = new Item("Camiseta do Corinthians", 149.99M);
-cesta.Itens.Add(camiseta);
-
-foreach (var item in cesta.Itens)
+// Adiciona os itens na cesta
+minhaCesta.AdicionarItem(bola);
+minhaCesta.AdicionarItem(camiseta);
+minhaCesta.AdicionarItem(chuteira);
+ 
+// Imprime os valores
+Console.WriteLine($"Itens da Cesta:");
+foreach (Item item in minhaCesta.Itens)
 {
-    Console.WriteLine($"Item: {item.Nome} - Quantidade: {item.Quantidade} - Preço: {item.Preco}");
+    Console.WriteLine($"- {item.Nome.PadRight(35, ' ')}");
 }
+Console.WriteLine($"Total Itens da Cesta: {minhaCesta.TotalItens()}");
+Console.WriteLine($"Valor Total da Cesta: {minhaCesta.ValorTotal()}");
+ 
+IPagamento pagamento = SelecionarPagamento.Informar();
+pagamento.Processar(minhaCesta);
 
+// break
 Console.ReadLine();
