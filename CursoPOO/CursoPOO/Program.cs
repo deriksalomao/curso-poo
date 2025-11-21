@@ -40,3 +40,8 @@ pagamento.Processar(minhaCesta);
 
 // break
 Console.ReadLine();
+
+//Streams
+//  - FileStream
+//  - MemoryStream
+//  - NetworkStream

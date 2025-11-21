@@ -16,4 +16,9 @@ public class CalcularFreteCorreiosPAC : CalcularFreteCorreios
     {
         return 15.00m;
     }
+
+    //public override OpcaoFrete Calcular(Cesta cesta)
+    //{
+    //    return base.Calcular(cesta);
+    //}
 }
