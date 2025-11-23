@@ -2,7 +2,6 @@
 using CursoPOO.Frete;
 using CursoPOO.Frete.Impl;
 using CursoPOO.Pagamento;
-using CursoPOO.Pagamento.Impl;
 
 // Criando uma instancia da classe Cesta
 Cesta minhaCesta = new Cesta();
@@ -21,10 +20,10 @@ minhaCesta.AdicionarItem(chuteira);
 Console.WriteLine($"Itens da Cesta:");
 foreach (Item item in minhaCesta.Itens)
 {
-    Console.WriteLine($"- {item.Nome.PadRight(35, ' ')} | Qtd {item.Quantidade} | {item.TotalFormatado}");
+    Console.WriteLine($"- {item.ToString()}");
 }
-Console.WriteLine($"Total Itens da Cesta: {minhaCesta.TotalItens}");
-Console.WriteLine($"Valor Total da Cesta: {minhaCesta.ValorTotal}");
+
+Console.WriteLine(minhaCesta);
 
 ICalcularFrete calcularFrete = new CalcularFreteCorreiosPAC();
 var opcaoFrete = calcularFrete.Calcular(minhaCesta);

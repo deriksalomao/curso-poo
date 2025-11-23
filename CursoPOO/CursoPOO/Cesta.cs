@@ -32,10 +32,16 @@ public class Cesta
         _itens.Remove(item);
     }
 
-    public void Pagar(IPagamento pagamento)
+    public override string ToString()
     {
-        pagamento.Processar(this);
-    }   
+        return $"Qtd Itens: {TotalItens}, Valor Total: {ValorTotalFormatado}";
+    }
+     
+
+    //public void Pagar(IPagamento pagamento)
+    //{
+    //    pagamento.Processar(this);
+    //}   
 
     public Cesta()
     {
