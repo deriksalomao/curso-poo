@@ -52,11 +52,3 @@ O curso foi dividido em 3 dias, abordando os conceitos fundamentais e avançados
 * DTO, VO, Entidades, Serviços, etc
 * Erros mais comuns na OOP
 * Estudo de OOP em exemplos reais
-
----
-
-## 📖 Referências
-
-* Programação Orientada a Objetos
-* Guia de programação em C#
-* Convenções de codificação em C#
