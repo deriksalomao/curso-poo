@@ -44,5 +44,3 @@ Console.ReadLine();
 //  - FileStream
 //  - MemoryStream
 //  - NetworkStream
-
-//LEMBRAR DE CONTINUAR AMANHÃ
